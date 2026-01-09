@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrollment System - Class Access</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { font-family: 'Poppins', sans-serif; }
+body { background: linear-gradient(135deg, #eef2f7, #f8f9fb); min-height: 100vh; display: flex; flex-direction: column; }
+.header-section { padding: 70px 20px; background: linear-gradient(135deg,#0d6efd,#6610f2); color:#fff; }
+.nav-section { box-shadow:0 6px 20px rgba(0,0,0,.05); }
+.nav-tabs .nav-link.active { background:linear-gradient(135deg,#0d6efd,#6610f2); color:#fff; border-radius:8px; }
+.card { border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,.08); }
+footer { margin-top:auto; background:#fff; border-top:1px solid #e5e5e5; padding:20px; }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="container-fluid header-section text-center">
+<h1 class="fw-bold">Enrollment System</h1>
+<p>Binalatongan Community College</p>
+</div>
+
+<!-- NAV -->
+<div class="container-fluid nav-section bg-light py-2">
+<div class="d-flex justify-content-between align-items-center">
+<ul class="nav nav-tabs">
+<li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-user-graduate"></i> Student</a></li>
+<li class="nav-item"><a class="nav-link" href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Teacher</a></li>
+<li class="nav-item"><a class="nav-link" href="subjects.html"><i class="fas fa-book"></i> Subject</a></li>
+<li class="nav-item"><a class="nav-link active" href="class_access.html"><i class="fas fa-door-open"></i> Class Access</a></li>
+</ul>
+<a href="#" class="btn btn-outline-danger btn-sm"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="container mt-4 mb-5">
+<div class="card">
+<div class="card-header">
+<h4><i class="fas fa-layer-group"></i> Class Details</h4>
+</div>
+
+<div class="card-body table-responsive">
+<table class="table table-hover">
+<thead>
+<tr>
+<th>ID</th><th>Subject Name</th><th>Units</th><th>Course</th><th>Action</th>
+</tr>
+</thead>
+<tbody id="classTable"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<footer class="text-center">
+<p class="mb-0">Enrollment System © 2025</p>
+</footer>
+
+<script>
+const subjects = [
+{ id:1, name:"Integrative Programming and Technologies 1", units:3, course:"BSIT" },
+{ id:2, name:"Data Mining", units:3, course:"BSIT" },
+{ id:3, name:"PROED 1", units:3, course:"BEED" },
+{ id:4, name:"PE 2", units:0, course:"BEED" },
+{ id:5, name:"Multimedia Technologies", units:3, course:"BSIT" },
+{ id:6, name:"Software Engineering", units:3, course:"BSIT" }
+];
+
+const classTable = document.getElementById("classTable");
+
+subjects.forEach(s=>{
+classTable.innerHTML+=`
+<tr>
+<td>${s.id}</td>
+<td>${s.name}</td>
+<td>${s.units}</td>
+<td>${s.course}</td>
+<td>
+<a href="class_students.html?subject=${s.id}" class="btn btn-info btn-sm">
+<i class="fas fa-users"></i> View Students
+</a>
+</td>
+</tr>`;
+});
+</script>
+
+</body>
+</html>

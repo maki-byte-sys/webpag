@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Enrollment System - Students Enrolled</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+    <style>
+        body { background:#f4f6f9; }
+        .header-section { background:#2c3e50; color:white; padding:30px 0; }
+        .system-title { font-weight:700; }
+        .nav-section { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+        .main-content { margin-top:30px; }
+
+        .enrolled-section, .all-students-section {
+            background:#fff;
+            border-radius:10px;
+            padding:25px;
+            margin-bottom:30px;
+            box-shadow:0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .section-title {
+            border-bottom:3px solid #3498db;
+            padding-bottom:10px;
+            margin-bottom:20px;
+            font-weight:600;
+        }
+
+        .enrollment-table th {
+            background:#34495e;
+            color:white;
+            padding:14px;
+        }
+
+        .course-badge {
+            background:#e3f2fd;
+            color:#1976d2;
+            padding:4px 10px;
+            border-radius:15px;
+            font-size:.85rem;
+            font-weight:600;
+        }
+
+        .btn-enroll {
+            background:#27ae60;
+            color:white;
+            border:none;
+        }
+
+        .btn-remove {
+            background:#e74c3c;
+            color:white;
+            border:none;
+        }
+
+        .subject-info-card {
+            background:linear-gradient(135deg,#3498db,#2980b9);
+            color:white;
+            border-radius:10px;
+            padding:20px;
+            margin-bottom:25px;
+        }
+
+        footer {
+            text-align:center;
+            color:#7f8c8d;
+            margin-top:40px;
+            padding:20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="container-fluid header-section text-center">
+    <h1 class="system-title">Enrollment System</h1>
+    <p>Binalatongan Community College</p>
+</div>
+
+<!-- Navigation -->
+<div class="container-fluid nav-section">
+    <ul class="nav nav-tabs px-3">
+        <li class="nav-item"><a class="" href="add_student.html">Student</a></li>
+        <li class="nav-item"><a class="nav-link" href="teachers.html">Teacher</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Subject</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Class Details</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="container main-content">
+
+    <!-- Subject Info -->
+    <div class="subject-info-card">
+        <h4><i class="fas fa-chalkboard me-2"></i>Web Development</h4>
+        <div class="d-flex gap-4 flex-wrap mt-2">
+            <div><i class="fas fa-hashtag"></i> Code: IT-301</div>
+            <div><i class="fas fa-graduation-cap"></i> Course: BSIT</div>
+            <div><i class="fas fa-balance-scale"></i> Units: 3</div>
+        </div>
+    </div>
+
+    <!-- Enrolled Students -->
+    <div class="enrolled-section">
+        <h3 class="section-title"><i class="fas fa-user-friends me-2"></i>Students Enrolled</h3>
+        <div class="table-responsive">
+            <table class="table table-hover enrollment-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="enrolledTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- All Students -->
+    <div class="all-students-section">
+        <h3 class="section-title"><i class="fas fa-users me-2"></i>All Students</h3>
+        <div class="table-responsive">
+            <table class="table table-hover enrollment-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="allStudentsTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Enrollment System © 2025</p>
+        <p class="small">IT ELEC 3 – Data Mining</p>
+    </footer>
+</div>
+
+<script>
+const enrolledStudents = [
+    {id:1, name:"Dela Cruz, Juan", phone:"09123456789", email:"juan@email.com", course:"BSIT"},
+    {id:2, name:"Reyes, Maria", phone:"09987654321", email:"maria@email.com", course:"BSIT"}
+];
+
+const allStudents = [
+    {id:3, name:"Santos, Pedro", phone:"09111111111", email:"pedro@email.com", course:"BSCS"},
+    {id:4, name:"Garcia, Ana", phone:"09222222222", email:"ana@email.com", course:"BSIT"}
+];
+
+function renderTables() {
+    const enrolledTable = document.getElementById("enrolledTable");
+    const allTable = document.getElementById("allStudentsTable");
+
+    enrolledTable.innerHTML = "";
+    allTable.innerHTML = "";
+
+    enrolledStudents.forEach((s,i) => {
+        enrolledTable.innerHTML += `
+            <tr>
+                <td>${i+1}</td>
+                <td>${s.name}</td>
+                <td>${s.phone}</td>
+                <td>${s.email}</td>
+                <td><span class="course-badge">${s.course}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-remove" onclick="removeStudent(${s.id})">
+                        <i class="fas fa-user-minus"></i> Remove
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+
+    allStudents.forEach((s,i) => {
+        allTable.innerHTML += `
+            <tr>
+                <td>${i+1}</td>
+                <td>${s.name}</td>
+                <td>${s.email}</td>
+                <td>${s.phone}</td>
+                <td><span class="course-badge">${s.course}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-enroll" onclick="enrollStudent(${s.id})">
+                        <i class="fas fa-user-plus"></i> Enroll
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function enrollStudent(id) {
+    const index = allStudents.findIndex(s => s.id === id);
+    enrolledStudents.push(allStudents[index]);
+    allStudents.splice(index,1);
+    renderTables();
+}
+
+function removeStudent(id) {
+    const index = enrolledStudents.findIndex(s => s.id === id);
+    allStudents.push(enrolledStudents[index]);
+    enrolledStudents.splice(index,1);
+    renderTables();
+}
+
+renderTables();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

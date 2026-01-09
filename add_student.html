@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Student - Enrollment System</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+.header-section {
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid header-section text-center">
+    <h1 class="system-title">Enrollment System</h1>
+    <p class="institution">Binalatongan Community College</p>
+</div>
+
+<div class="container-fluid nav-section bg-light py-2">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+                <i class="fas fa-user-graduate"></i> Student
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="teachers.html">
+                <i class="fas fa-chalkboard-teacher"></i> Teacher
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="subjects.html">
+                <i class="fas fa-book"></i> Subject
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container mt-4">
+
+<a href="index.html" class="btn btn-secondary mb-3">
+    <i class="fas fa-arrow-left"></i> Back to Student List
+</a>
+
+<div class="card">
+<div class="card-header">
+    <h3><i class="fas fa-user-plus"></i> Add Student</h3>
+</div>
+
+<div class="card-body">
+<form id="studentForm">
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<label>First Name *</label>
+<input type="text" id="firstName" class="form-control" required>
+</div>
+
+<div class="col-md-4 mb-3">
+<label>Middle Name</label>
+<input type="text" id="middleName" class="form-control">
+</div>
+
+<div class="col-md-4 mb-3">
+<label>Last Name *</label>
+<input type="text" id="lastName" class="form-control" required>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Email *</label>
+<input type="email" id="email" class="form-control" required>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Phone *</label>
+<input type="text" id="phone" class="form-control" required>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Course *</label>
+<select id="course" class="form-select" required>
+    <option value="">Select Course</option>
+    <option>BSIT</option>
+    <option>BED</option>
+    <option>BSBA</option>
+    <option>BSHM</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Year Level *</label>
+<select id="yearLevel" class="form-select" required>
+    <option value="">Select Year Level</option>
+    <option>1st Year</option>
+    <option>2nd Year</option>
+    <option>3rd Year</option>
+    <option>4th Year</option>
+</select>
+</div>
+
+<div class="col-md-4 mb-3">
+<label>Section *</label>
+<input type="text" id="section" class="form-control" required placeholder="e.g. A">
+</div>
+
+<div class="col-md-4 mb-3">
+<label>GPA *</label>
+<input type="number" id="gpa" class="form-control" step="0.01" min="1.00" max="5.00" required>
+</div>
+
+<div class="col-md-4 mb-3">
+<label>Status *</label>
+<select id="status" class="form-select" required>
+    <option value="">Select Status</option>
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+    <option value="Irregular">Irregular</option>
+</select>
+</div>
+
+</div>
+
+<button class="btn btn-primary btn-lg mt-2">
+    <i class="fas fa-save"></i> Save Student
+</button>
+
+</form>
+</div>
+</div>
+
+</div>
+
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let students = [];
+    try {
+        students = JSON.parse(localStorage.getItem("students")) || [];
+    } catch {
+        students = [];
+    }
+
+    const student = {
+        id: Date.now(),
+        firstName: firstName.value.trim(),
+        middleName: middleName.value.trim(),
+        lastName: lastName.value.trim(),
+        email: email.value.trim(),
+        phone: phone.value.trim(),
+        course: course.value,
+        yearLevel: yearLevel.value,
+        section: section.value.trim(),
+        gpa: gpa.value,
+        status: status.value
+    };
+
+    students.push(student);
+    localStorage.setItem("students", JSON.stringify(students));
+
+    alert("Student added successfully!");
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

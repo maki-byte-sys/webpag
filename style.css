@@ -1,0 +1,1072 @@
+/* Enrollment System CSS - Matching PDF Design */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.header-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 25px 0;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.system-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.institution {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Navigation Tabs */
+.nav-section {
+    background-color: white;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tabs-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+
+.nav-tabs .nav-link {
+    color: #7f8c8d;
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    border-right: 1px solid #eee;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #3498db;
+    background-color: #f8f9fa;
+}
+
+.nav-tabs .nav-link.active {
+    color: #3498db;
+    background-color: white;
+    border-bottom: 3px solid #3498db;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link:last-child {
+    border-right: none;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-bottom: none;
+    padding: 20px 25px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Table Styles */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+}
+
+.student-table {
+    margin-bottom: 0;
+    background-color: white;
+}
+
+.student-table thead {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+}
+
+.student-table th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.student-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.student-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.student-table td {
+    padding: 16px 15px;
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Badge Styles */
+.course-badge, .section-badge, .gpa-badge, .status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 70px;
+}
+
+.course-badge {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+}
+
+.section-badge {
+    background-color: #fff3e0;
+    color: #f57c00;
+    border: 1px solid #ffe0b2;
+}
+
+.gpa-badge {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border: 1px solid #e1bee7;
+}
+
+.gpa-high {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.gpa-medium {
+    background-color: #fff3e0;
+    color: #f57c00;
+    border-color: #ffe0b2;
+}
+
+.gpa-low {
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.status-enrolled {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.status-not-enrolled {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-buttons .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Form Styles */
+.form-card {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.student-form .form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.student-form .form-control,
+.student-form .form-select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.student-form .form-control:focus,
+.student-form .form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.form-text {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.form-buttons .btn-lg {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 40px 20px;
+}
+
+.empty-state i {
+    color: #bdc3c7;
+    margin-bottom: 15px;
+}
+
+.empty-state h5 {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    border-top: 1px solid #dee2e6;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .system-title {
+        font-size: 2rem;
+    }
+    
+    .nav-tabs .nav-link {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .student-table th,
+    .student-table td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-buttons .btn-lg {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+.btn-warning {
+    background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(90deg, #e67e22 0%, #d35400 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(90deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(90deg, #95a5a6 0%, #7f8c8d 100%);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(90deg, #7f8c8d 0%, #6c7b7d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(127, 140, 141, 0.3);
+}
+
+/* Add these styles to your existing style.css */
+
+/* Navigation with Logout Button */
+.nav-tabs-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logout-section {
+    margin-left: 20px;
+}
+
+.logout-btn {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Teacher Badge */
+.dept-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    min-width: 70px;
+    text-align: center;
+}
+
+/* Units Badge */
+.units-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #e0f7fa;
+    color: #006064;
+    border: 1px solid #b2ebf2;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Access Level Badges */
+.access-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: center;
+}
+
+.access-full {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.access-limited {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.access-basic {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-body p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Table Specific Styles */
+.teacher-table th:first-child,
+.teacher-table td:first-child,
+.subject-table th:first-child,
+.subject-table td:first-child,
+.access-table th:first-child,
+.access-table td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .nav-tabs-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-tabs {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .logout-section {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+    
+    .teacher-table th:nth-child(4),
+    .teacher-table td:nth-child(4),
+    .subject-table th:nth-child(5),
+    .subject-table td:nth-child(5) {
+        display: none;
+    }
+}
+
+/* Add these styles to your existing style.css */
+
+/* Pagination Styles */
+.pagination-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    border-color: #2980b9;
+    color: white;
+}
+
+.page-link {
+    color: #3498db;
+    border: 1px solid #dee2e6;
+    padding: 8px 15px;
+    margin: 0 3px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+/* Records Info */
+.text-muted {
+    font-size: 0.9rem;
+    color: #6c757d !important;
+}
+
+/* Search Form */
+.input-group .form-control {
+    border-right: 0;
+}
+
+.input-group .btn-outline-secondary {
+    border-left: 0;
+    background-color: white;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+/* Table Responsive */
+.table-responsive {
+    min-height: 300px;
+}
+
+/* Empty State */
+.empty-state {
+    padding: 40px 20px;
+}
+
+.empty-state i {
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+.empty-state h5 {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #95a5a6;
+    margin-bottom: 0;
+}
+
+/* Add these styles to your style.css */
+
+/* Modal Styling */
+.modal-lg {
+    max-width: 800px;
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body h6 {
+    color: #3498db;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.modal-body .student-details p,
+.modal-body .academic-details p {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-body .student-details p:last-child,
+.modal-body .academic-details p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.modal-body strong {
+    color: #2c3e50;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.modal-body span {
+    color: #34495e;
+}
+
+/* Badge styling inside modal */
+.modal-body .course-badge,
+.modal-body .section-badge,
+.modal-body .gpa-badge,
+.modal-body .status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+/* Action buttons styling */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.action-buttons .btn-sm {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 65px;
+}
+
+/* Modal footer buttons */
+.modal-footer .btn {
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-body .row {
+        flex-direction: column;
+    }
+    
+    .modal-body .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .action-buttons .btn-sm {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.teacher-table thead {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+}
+
+.teacher-table th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.subject-table thead {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+}
+
+.subject-table th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.access-table thead {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+}
+
+.access-table th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.class-details-table {
+    margin-bottom: 0;
+    background-color: white;
+}
+
+.class-details-table thead {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+}
+
+.class-details-table th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.class-details-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.class-details-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.class-details-table td {
+    padding: 16px 15px;
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
+}
+
+.subject-id-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+    min-width: 40px;
+    text-align: center;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    min-width: 70px;
+    text-align: center;
+}
+
+.units-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #e0f7fa;
+    color: #006064;
+    border: 1px solid #b2ebf2;
+    min-width: 80px;
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-buttons .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.subject-name-cell {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.sequential-id {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    min-width: 30px;
+    display: inline-block;
+}
+
+.enrolled-section, .all-students-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.class-title {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.enrollment-table th {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: none;
+}
+
+.enrollment-table td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.student-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.course-badge {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #bbdefb;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-enroll {
+    background: linear-gradient(90deg, #27ae60 0%, #229954 100%);
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-enroll:hover {
+    background: linear-gradient(90deg, #229954 0%, #1e8449 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 153, 84, 0.3);
+    color: white;
+}
+
+.btn-remove {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-remove:hover {
+    background: linear-gradient(90deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+    color: white;
+}
+
+.back-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.back-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7f8c8d;
+}
+
+.empty-state i {
+    color: #bdc3c7;
+    margin-bottom: 15px;
+}
+
+.sequential-id {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 30px;
+    display: inline-block;
+}
+
+.subject-info-card {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+.subject-info-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subject-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+
+.subject-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.subject-detail-item i {
+    color: rgba(255,255,255,0.8);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Subject</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+<h3><i class="fas fa-plus"></i> Add Subject</h3>
+
+<form id="subjectForm">
+
+<input class="form-control mb-2" id="code" placeholder="Subject Code" required>
+
+<input class="form-control mb-2" id="subjectName" placeholder="Subject Name" required>
+
+<input class="form-control mb-2" id="units" type="number" placeholder="Units" required>
+
+<select class="form-select mb-2" id="course" required>
+<option value="">Course</option>
+<option value="BSIT">BSIT</option>
+<option value="BED">BED</option>
+<option value="BSBA">BSBA</option>
+<option value="BSHM">BSHM</option>
+</select>
+
+<select class="form-select mb-2" id="yearLevel" required>
+<option value="">Year Level</option>
+<option value="1st Year">1st Year</option>
+<option value="2nd Year">2nd Year</option>
+<option value="3rd Year">3rd Year</option>
+<option value="4th Year">4th Year</option>
+</select>
+
+<select class="form-select mb-3" id="status" required>
+<option value="Active">Active</option>
+<option value="Inactive">Inactive</option>
+</select>
+
+<button class="btn btn-success">Save</button>
+<a href="subjects.html" class="btn btn-secondary">Cancel</a>
+
+</form>
+</div>
+
+<script>
+document.getElementById("subjectForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const subjects = JSON.parse(localStorage.getItem("subjects")) || [];
+
+    subjects.push({
+        id: Date.now(),
+        code: document.getElementById("code").value.trim(),
+        name: document.getElementById("subjectName").value.trim(),
+        units: document.getElementById("units").value,
+        course: document.getElementById("course").value,
+        yearLevel: document.getElementById("yearLevel").value,
+        status: document.getElementById("status").value
+    });
+
+    localStorage.setItem("subjects", JSON.stringify(subjects));
+    window.location.href = "subjects.html";
+});
+</script>
+
+</body>
+</html>
